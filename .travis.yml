@@ -1,3 +1,7 @@
+os: linux
+arch:
+ - amd64
+ - ppc64le
 language: node_js
 node_js:
   - "14"
@@ -39,6 +43,13 @@ matrix:
       env: FLOW=true TEST=false
     - node_js: "node"
       env: LINT=true TEST=false
+    #powerjobs
+    - node_js: "node"    
+      env: FLOW=true TEST=false
+      arch: ppc64le
+    - node_js: "node"
+      env: LINT=true TEST=false
+      arch: ppc64le      
   exclude:
     - node_js: "4"
       env: ESLINT=5
